@@ -20,15 +20,11 @@ const langs = {
   'zh-TW': { name: '中文繁体', value: zhTw, sideBarWidth: '210px' },
   'bg': { name: 'Български', value: bgEl, sideBarWidth: '260px' },
 }
-// SKY: Bulgarian unless chosen otherwise; a browser language like "bg-BG" or "en-US" maps to its base
-// translation (upstream showed raw keys for any code it did not know).
+// SKY: Bulgarian unless someone picks another language in the menu (the browser's language is not used:
+// upstream took it and showed raw keys for any code it did not know, e.g. "bg-BG" or "en-US").
 function pickLang () {
   const saved = localStorage.getItem('lang')
   if (saved && langs[saved]) return saved
-  const nav = navigator.language || ''
-  if (langs[nav]) return nav
-  const base = nav.split('-')[0]
-  if (base !== 'zh' && langs[base]) return base
   return 'bg'
 }
 const defaultLang = pickLang()
