@@ -531,5 +531,50 @@
   },
   "Remark": {
     "One": "Remark"
+  },
+  "Note": {
+    "One": "Note"
+  },
+  "NoteBy": {
+    "One": "Note by"
+  },
+  "Duration": {
+    "One": "Duration"
+  },
+  "Open": {
+    "One": "Open"
+  },
+  "NotAuthorized": {
+    "One": "Not authorized"
+  },
+  "PortForward": {
+    "One": "Port forward"
+  },
+  "Camera": {
+    "One": "Camera"
+  },
+  "Terminal": {
+    "One": "Terminal"
+  },
+  "WorkTime": {
+    "One": "Time per technician"
+  },
+  "Sessions": {
+    "One": "Sessions"
+  },
+  "TotalTime": {
+    "One": "Total time"
+  },
+  "OpenSessions": {
+    "One": "Not closed"
+  },
+  "DateRange": {
+    "One": "Dates"
+  },
+  "Technician": {
+    "One": "Technician"
+  },
+  "WorkTimeTip": {
+    "One": "Time from the connection to its close, including the wait for the customer to accept. Only connections that were let in."
   }
 }

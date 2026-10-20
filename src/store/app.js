@@ -7,6 +7,7 @@ import ru from 'element-plus/es/locale/lang/ru'
 import fr from 'element-plus/es/locale/lang/fr'
 import es from 'element-plus/es/locale/lang/es'
 import zhTw from 'element-plus/es/locale/lang/zh-tw'
+import bgEl from 'element-plus/es/locale/lang/bg' // SKY
 import { admin, app, server } from '@/api/config'
 
 const langs = {
@@ -17,13 +18,25 @@ const langs = {
   'ru': { name: 'Русский', value: ru, sideBarWidth: '250px' },
   'es': { name: 'Español', value: es, sideBarWidth: '280px' },
   'zh-TW': { name: '中文繁体', value: zhTw, sideBarWidth: '210px' },
+  'bg': { name: 'Български', value: bgEl, sideBarWidth: '260px' },
 }
-const defaultLang = localStorage.getItem('lang') || navigator.language || 'zh-CN'
+// SKY: Bulgarian unless chosen otherwise; a browser language like "bg-BG" or "en-US" maps to its base
+// translation (upstream showed raw keys for any code it did not know).
+function pickLang () {
+  const saved = localStorage.getItem('lang')
+  if (saved && langs[saved]) return saved
+  const nav = navigator.language || ''
+  if (langs[nav]) return nav
+  const base = nav.split('-')[0]
+  if (base !== 'zh' && langs[base]) return base
+  return 'bg'
+}
+const defaultLang = pickLang()
 export const useAppStore = defineStore({
   id: 'App',
   state: () => ({
     setting: {
-      title: 'Rustdesk API Admin',
+      title: 'SKY Support',
       hello: '',
       sideIsCollapse: false,
       logo,

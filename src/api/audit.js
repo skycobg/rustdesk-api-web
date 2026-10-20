@@ -45,3 +45,11 @@ export function fileBatchDelete (data) {
     data,
   })
 }
+
+// SKY: sessions and total time per technician
+export function summary (params) {
+  return request({
+    url: '/audit_conn/summary',
+    params,
+  })
+}

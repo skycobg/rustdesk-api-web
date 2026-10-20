@@ -8,6 +8,13 @@
         <el-form-item :label="T('FromPeer')">
           <el-input v-model="listQuery.from_peer" clearable></el-input>
         </el-form-item>
+        <!-- SKY: technician and dates -->
+        <el-form-item :label="T('Technician')">
+          <el-input v-model="listQuery.from_name" clearable></el-input>
+        </el-form-item>
+        <el-form-item :label="T('DateRange')">
+          <el-date-picker v-model="dates" type="daterange" value-format="YYYY-MM-DD" unlink-panels clearable style="width: 240px"/>
+        </el-form-item>
         <el-form-item>
           <el-button type="primary" @click="handlerQuery">{{ T('Filter') }}</el-button>
           <el-button type="danger" @click="toBatchDelete">{{ T('BatchDelete') }}</el-button>
@@ -23,15 +30,23 @@
         <el-table-column :label="T('FromPeer')" prop="from_peer" align="center" width="120"/>
         <el-table-column :label="T('FromName')" prop="from_name" align="center" width="120"/>
         <el-table-column :label="T('Ip')" prop="ip" align="center" width="120"/>
-        <el-table-column pop="type" :label="T('Type')" align="center" width="120">
+        <el-table-column pop="type" :label="T('Type')" align="center" width="150">
           <template #default="{row}">
-            <el-tag v-if="row.type === 1" type="warning">{{ T('File') }}</el-tag>
+            <!-- SKY: every type; an attempt without access has no from_peer -->
+            <el-tag v-if="!row.from_peer" type="info">{{ T('NotAuthorized') }}</el-tag>
+            <el-tag v-else-if="row.type === 1" type="warning">{{ T('File') }}</el-tag>
+            <el-tag v-else-if="row.type === 2" type="success">{{ T('PortForward') }}</el-tag>
+            <el-tag v-else-if="row.type === 3" type="success">{{ T('Camera') }}</el-tag>
+            <el-tag v-else-if="row.type === 4" type="success">{{ T('Terminal') }}</el-tag>
             <el-tag v-else>{{ T('Common') }}</el-tag>
           </template>
         </el-table-column>
+        <el-table-column prop="created_at" :label="T('CreatedAt')" align="center" width="170"/>
+        <el-table-column :label="T('CloseTime')" prop="close_time" align="center" width="170"/>
+        <el-table-column :label="T('Duration')" prop="duration" align="center" width="130"/>
+        <el-table-column :label="T('Note')" prop="note" align="left" min-width="200" show-overflow-tooltip/>
+        <el-table-column :label="T('NoteBy')" prop="note_by" align="center" width="110"/>
         <el-table-column prop="uuid" label="uuid" align="center" width="120" show-overflow-tooltip/>
-        <el-table-column prop="created_at" :label="T('CreatedAt')" align="center"/>
-        <el-table-column :label="T('CloseTime')" prop="close_time" align="center"/>
         <el-table-column :label="T('Actions')" align="center" width="150">
           <template #default="{row}">
             <el-button type="danger" @click="del(row)">{{ T('Delete') }}</el-button>
@@ -72,6 +87,12 @@
   watch(() => listQuery.page, getList)
 
   watch(() => listQuery.page_size, handlerQuery)
+  // SKY: the date range picker fills from/to
+  const dates = ref(null)
+  watch(dates, (v) => {
+    listQuery.from = v ? v[0] : null
+    listQuery.to = v ? v[1] : null
+  })
   const multipleSelection = ref([])
   const handleSelectionChange = (val) => {
     multipleSelection.value = val

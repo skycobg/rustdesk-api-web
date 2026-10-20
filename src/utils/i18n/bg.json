@@ -1,0 +1,580 @@
+{
+  "Login": {
+    "One": "Вход"
+  },
+  "Logout": {
+    "One": "Изход"
+  },
+  "Register": {
+    "One": "Регистрация"
+  },
+  "Confirm": {
+    "One": "Потвърди"
+  },
+  "Username": {
+    "One": "Потребител"
+  },
+  "Password": {
+    "One": "Парола"
+  },
+  "LoginSuccess": {
+    "One": "Успешен вход"
+  },
+  "ForgotPassword": {
+    "One": "Забравена парола"
+  },
+  "ResetPassword": {
+    "One": "Нова парола"
+  },
+  "ChangePassword": {
+    "One": "Смяна на паролата"
+  },
+  "Userinfo": {
+    "One": "Профил"
+  },
+  "ParamRequired": {
+    "One": "{param} е задължително"
+  },
+  "HasBind": {
+    "One": "Свързан"
+  },
+  "NoBind": {
+    "One": "Не е свързан"
+  },
+  "UnBind": {
+    "One": "Развържи"
+  },
+  "ToBind": {
+    "One": "Свържи"
+  },
+  "Confirm?": {
+    "One": "Потвърждавате ли: {param}?"
+  },
+  "Cancel": {
+    "One": "Отказ"
+  },
+  "Platform": {
+    "One": "Платформа"
+  },
+  "Status": {
+    "One": "Състояние"
+  },
+  "Actions": {
+    "One": "Действия"
+  },
+  "Filter": {
+    "One": "Търси"
+  },
+  "Add": {
+    "One": "Добави"
+  },
+  "Hostname": {
+    "One": "Име на компютъра"
+  },
+  "Alias": {
+    "One": "Име"
+  },
+  "Hash": {
+    "One": "Хеш"
+  },
+  "Tags": {
+    "One": "Етикети"
+  },
+  "Edit": {
+    "One": "Редактирай"
+  },
+  "Delete": {
+    "One": "Изтрий"
+  },
+  "Create": {
+    "One": "Създай"
+  },
+  "Update": {
+    "One": "Обнови"
+  },
+  "LoginName": {
+    "One": "Потребител (вход)"
+  },
+  "Submit": {
+    "One": "Запази"
+  },
+  "OperationSuccess": {
+    "One": "Готово"
+  },
+  "Owner": {
+    "One": "Собственик"
+  },
+  "Name": {
+    "One": "Име"
+  },
+  "Color": {
+    "One": "Цвят"
+  },
+  "CreatedAt": {
+    "One": "Начало"
+  },
+  "UpdatedAt": {
+    "One": "Променено"
+  },
+  "Memory": {
+    "One": "Памет"
+  },
+  "Os": {
+    "One": "ОС"
+  },
+  "Uuid": {
+    "One": "UUID"
+  },
+  "Version": {
+    "One": "Версия"
+  },
+  "Type": {
+    "One": "Вид"
+  },
+  "Group": {
+    "One": "Група"
+  },
+  "CommonGroup": {
+    "One": "Обикновена група"
+  },
+  "CommonGroupNote": {
+    "One": "Само администраторите виждат членовете на групата и техните устройства"
+  },
+  "SharedGroup": {
+    "One": "Споделена група"
+  },
+  "SharedGroupNote": {
+    "One": "Всички потребители виждат членовете на групата и техните устройства"
+  },
+  "Nickname": {
+    "One": "Показвано име"
+  },
+  "UserTags": {
+    "One": "Етикети на потребителя"
+  },
+  "UserAddressBook": {
+    "One": "Адресна книга на потребителя"
+  },
+  "IsAdmin": {
+    "One": "Администратор"
+  },
+  "PleaseInputNewPassword": {
+    "One": "Въведете нова парола"
+  },
+  "AutoRegister": {
+    "One": "Автоматична регистрация"
+  },
+  "AutoRegisterNote": {
+    "One": "Ако е включено, при вход с OAuth без свързан акаунт автоматично се създава нов акаунт"
+  },
+  "ThirdName": {
+    "One": "Външен акаунт"
+  },
+  "Close": {
+    "One": "Затвори"
+  },
+  "OauthBinding": {
+    "One": "Свързвате външен акаунт"
+  },
+  "OauthLogining": {
+    "One": "Влизате с външен акаунт"
+  },
+  "OauthCloseNote": {
+    "One": "Ако не сте го поискали вие, просто затворете страницата"
+  },
+  "OperationSuccessAndCloseAfter3Seconds": {
+    "One": "Готово. Страницата ще се затвори след 3 секунди"
+  },
+  "ConfirmOauth": {
+    "One": "Потвърди"
+  },
+  "Device": {
+    "One": "Устройство"
+  },
+  "ChangeLang": {
+    "One": "Език"
+  },
+  "My": {
+    "One": "Моите"
+  },
+  "Info": {
+    "One": "Информация"
+  },
+  "AddressBooks": {
+    "One": "Адресни книги"
+  },
+  "System": {
+    "One": "Система"
+  },
+  "PeerManage": {
+    "One": "Устройства"
+  },
+  "AddressBookManage": {
+    "One": "Адресни книги"
+  },
+  "GroupManage": {
+    "One": "Групи"
+  },
+  "UserManage": {
+    "One": "Потребители"
+  },
+  "UserAdd": {
+    "One": "Нов потребител"
+  },
+  "UserEdit": {
+    "One": "Редакция на потребител"
+  },
+  "TagsManage": {
+    "One": "Етикети"
+  },
+  "OauthManage": {
+    "One": "OAuth"
+  },
+  "LoginLog": {
+    "One": "Входове"
+  },
+  "LastOnlineTime": {
+    "One": "Последно на линия"
+  },
+  "JustNow": {
+    "One": "току-що"
+  },
+  "MinutesAgo": {
+    "One": "преди {param} минута",
+    "Other": "преди {param} минути"
+  },
+  "HoursAgo": {
+    "One": "преди {param} час",
+    "Other": "преди {param} часа"
+  },
+  "DaysAgo": {
+    "One": "преди {param} ден",
+    "Other": "преди {param} дни"
+  },
+  "MonthsAgo": {
+    "One": "преди {param} месец",
+    "Other": "преди {param} месеца"
+  },
+  "YearsAgo": {
+    "One": "преди {param} година",
+    "Other": "преди {param} години"
+  },
+  "MinutesLess": {
+    "One": "по-малко от {param} минута",
+    "Other": "по-малко от {param} минути"
+  },
+  "HoursLess": {
+    "One": "по-малко от {param} час",
+    "Other": "по-малко от {param} часа"
+  },
+  "DaysLess": {
+    "One": "по-малко от {param} ден",
+    "Other": "по-малко от {param} дни"
+  },
+  "Export": {
+    "One": "Експорт"
+  },
+  "AddToAddressBook": {
+    "One": "Добави в адресната книга"
+  },
+  "BatchDelete": {
+    "One": "Изтрий избраните"
+  },
+  "PleaseSelectData": {
+    "One": "Изберете редове"
+  },
+  "PasswordType": {
+    "One": "Вид парола"
+  },
+  "OncePassword": {
+    "One": "Еднократна парола"
+  },
+  "FixedPassword": {
+    "One": "Постоянна парола"
+  },
+  "FixedPasswordWarning": {
+    "One": "Постоянната парола може да изтече към чужди хора; по-сигурна е еднократната"
+  },
+  "ExpireTime": {
+    "One": "Валидност"
+  },
+  "ShareByWebClient": {
+    "One": "Сподели през уеб клиента"
+  },
+  "Minutes": {
+    "One": "{param} минута",
+    "Other": "{param} минути"
+  },
+  "Hours": {
+    "One": "{param} час",
+    "Other": "{param} часа"
+  },
+  "Days": {
+    "One": "{param} ден",
+    "Other": "{param} дни"
+  },
+  "Weeks": {
+    "One": "{param} седмица",
+    "Other": "{param} седмици"
+  },
+  "Months": {
+    "One": "{param} месец",
+    "Other": "{param} месеца"
+  },
+  "Forever": {
+    "One": "Без срок"
+  },
+  "Error": {
+    "One": "Грешка"
+  },
+  "IDNotExist": {
+    "One": "Няма такова ID"
+  },
+  "RemoteDesktopOffline": {
+    "One": "Устройството не е на линия"
+  },
+  "KeyMismatch": {
+    "One": "Ключът не съвпада"
+  },
+  "KeyOveruse": {
+    "One": "Ключът е използван твърде много пъти"
+  },
+  "Link": {
+    "One": "Линк"
+  },
+  "CopySuccess": {
+    "One": "Копирано"
+  },
+  "CopyFailed": {
+    "One": "Не можа да се копира"
+  },
+  "Timeout": {
+    "One": "Изтече времето"
+  },
+  "AuditConnLog": {
+    "One": "Дневник на връзките"
+  },
+  "Peer": {
+    "One": "Устройство",
+    "Other": "Устройства"
+  },
+  "FromPeer": {
+    "One": "От устройство"
+  },
+  "FromName": {
+    "One": "Техник"
+  },
+  "CloseTime": {
+    "One": "Край"
+  },
+  "AuditFileLog": {
+    "One": "Дневник на файловете"
+  },
+  "Common": {
+    "One": "Отдалечено управление"
+  },
+  "File": {
+    "One": "Файлове"
+  },
+  "Num": {
+    "One": "Брой"
+  },
+  "Ip": {
+    "One": "IP"
+  },
+  "FileName": {
+    "One": "Файл"
+  },
+  "FileInfo": {
+    "One": "Файлове"
+  },
+  "Path": {
+    "One": "Път"
+  },
+  "IndexNum": {
+    "One": "№"
+  },
+  "ToRemote": {
+    "One": "Към клиента"
+  },
+  "ToLocal": {
+    "One": "От клиента"
+  },
+  "AddressBookName": {
+    "One": "Име на адресната книга"
+  },
+  "AddRule": {
+    "One": "Добави правило"
+  },
+  "ShareRules": {
+    "One": "Споделяне"
+  },
+  "Rule": {
+    "One": "Права"
+  },
+  "Read": {
+    "One": "Четене"
+  },
+  "ReadWrite": {
+    "One": "Четене и писане"
+  },
+  "FullControl": {
+    "One": "Пълен контрол"
+  },
+  "ShareTo": {
+    "One": "Сподели с"
+  },
+  "MyAddressBook": {
+    "One": "Моята адресна книга"
+  },
+  "AddressBook": {
+    "One": "Адресна книга"
+  },
+  "AddressBookNameManage": {
+    "One": "Имена на адресните книги"
+  },
+  "MyAddressBookTips": {
+    "One": "„Моята адресна книга“ е системна и не може да се променя или трие"
+  },
+  "LastOnlineIp": {
+    "One": "Последен IP"
+  },
+  "OldPassword": {
+    "One": "Стара парола"
+  },
+  "NewPasswordEqualOldPassword": {
+    "One": "Новата парола трябва да е различна от старата"
+  },
+  "NewPassword": {
+    "One": "Нова парола"
+  },
+  "ConfirmPassword": {
+    "One": "Повторете паролата"
+  },
+  "PasswordNotMatchConfirmPassword": {
+    "One": "Паролите не съвпадат"
+  },
+  "ToLogin": {
+    "One": "Към входа"
+  },
+  "UserToken": {
+    "One": "Активни входове"
+  },
+  "BatchAddToAB": {
+    "One": "Добави избраните в адресна книга"
+  },
+  "BatchEditTags": {
+    "One": "Етикети на избраните"
+  },
+  "User": {
+    "One": "Потребител"
+  },
+  "ShareRecord": {
+    "One": "Споделяния"
+  },
+  "Second": {
+    "One": "секунда"
+  },
+  "Captcha": {
+    "One": "Код от картинката"
+  },
+  "ServerCmd": {
+    "One": "Команди към сървъра"
+  },
+  "Simple": {
+    "One": "Просто"
+  },
+  "Advanced": {
+    "One": "Разширено"
+  },
+  "Available": {
+    "One": "Достъпно"
+  },
+  "NotAvailable": {
+    "One": "Недостъпно"
+  },
+  "ServerCmdTips": {
+    "One": "Експериментално: API-то, hbbs и hbbr трябва да са на един и същ loopback адрес. Повече: {wiki}"
+  },
+  "Refresh": {
+    "One": "Обнови"
+  },
+  "Save": {
+    "One": "Запази"
+  },
+  "SendCustom": {
+    "One": "Изпрати своя"
+  },
+  "Send": {
+    "One": "Изпрати"
+  },
+  "SendCmd": {
+    "One": "Изпрати команда"
+  },
+  "Result": {
+    "One": "Резултат"
+  },
+  "DeviceGroupManage": {
+    "One": "Групи устройства"
+  },
+  "Drop file here or click to upload": {
+    "One": "Пуснете файла тук или натиснете за избор"
+  },
+  "Please upload csv file": {
+    "One": "Качете CSV файл"
+  },
+  "Columns": {
+    "One": "Колони"
+  },
+  "You can reference export file": {
+    "One": "Вижте експортирания файл за пример"
+  },
+  "Remark": {
+    "One": "Забележка"
+  },
+  "Note": {
+    "One": "Бележка"
+  },
+  "NoteBy": {
+    "One": "Бележката е от"
+  },
+  "Duration": {
+    "One": "Продължителност"
+  },
+  "Open": {
+    "One": "Отворена"
+  },
+  "NotAuthorized": {
+    "One": "Без достъп"
+  },
+  "PortForward": {
+    "One": "Тунел"
+  },
+  "Camera": {
+    "One": "Камера"
+  },
+  "Terminal": {
+    "One": "Терминал"
+  },
+  "WorkTime": {
+    "One": "Отработено време"
+  },
+  "Sessions": {
+    "One": "Сесии"
+  },
+  "TotalTime": {
+    "One": "Общо време"
+  },
+  "OpenSessions": {
+    "One": "Незатворени"
+  },
+  "DateRange": {
+    "One": "Период"
+  },
+  "Technician": {
+    "One": "Техник"
+  },
+  "WorkTimeTip": {
+    "One": "Времето от свързването до затварянето, заедно с чакането клиентът да приеме. Само връзките, в които техникът е влязъл."
+  }
+}

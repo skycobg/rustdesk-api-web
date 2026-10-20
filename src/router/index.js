@@ -185,6 +185,13 @@ export const asyncRoutes = [
         component: () => import('@/views/audit/connList.vue'),
       },
       {
+        // SKY: time per technician
+        path: '/auditSummary',
+        name: 'AuditSummary',
+        meta: { title: 'WorkTime', icon: 'Timer' /*keepAlive: true*/ },
+        component: () => import('@/views/audit/summary.vue'),
+      },
+      {
         path: '/auditFile',
         name: 'AuditFile',
         meta: { title: 'AuditFileLog', icon: 'Files' /*keepAlive: true*/ },
