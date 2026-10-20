@@ -4,8 +4,8 @@ The web administration of the **SKY Support** server (<https://github.com/skycob
 [lejianwen/rustdesk-api-web](https://github.com/lejianwen/rustdesk-api-web) (master 3998c2a, the UI of
 rustdesk-api v2.7). Our changes live on the `sky` branch:
 
-- Bulgarian (`src/utils/i18n/bg.json`, Element Plus `bg`), the default; a browser language such as `bg-BG` or
-  `en-US` maps to its base translation (upstream showed raw keys).
+- Bulgarian (`src/utils/i18n/bg.json`, Element Plus `bg`), the default whatever the browser language (another
+  one can be chosen in the menu; upstream took the browser language and showed raw keys for `bg-BG`, `en-US`).
 - Connection log: filters by technician and dates; columns for the duration, the end-of-session note and its
   author; every connection type and attempts without access.
 - "Time per technician" (`src/views/audit/summary.vue`): sessions and total time in a period.
