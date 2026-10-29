@@ -19,7 +19,7 @@
       </el-form>
     </el-card>
     <el-card class="list-body" shadow="hover">
-      <el-table :data="listRes.list" v-loading="listRes.loading" border>
+      <el-table :data="listRes.list" v-loading="listRes.loading" border highlight-current-row @row-click="row => (clickedBook = row)" style="cursor: pointer">
         <el-table-column prop="id" label="ID" align="center"/>
         <el-table-column prop="user_id" :label="T('Owner')" align="center">
           <template #default="{row}">
@@ -47,6 +47,7 @@
                      :total="listRes.total">
       </el-pagination>
     </el-card>
+    <BookPeers :collection="clickedBook"></BookPeers>
     <el-dialog v-model="formVisible" width="800" :title="!formData.id?T('Create') :T('Update') ">
       <el-form class="dialog-form" ref="form" :model="formData" label-width="120px">
         <el-form-item :label="T('Owner')" prop="user_id" required>
@@ -81,6 +82,8 @@
   import { useRepositories } from '@/views/address_book/collection'
   import { onActivated, onMounted, watch } from 'vue'
   import Rule from '@/views/address_book/rule.vue'
+  import BookPeers from '@/views/address_book/components/bookPeers.vue'
+  const clickedBook = ref(null)
   import { loadAllUsers } from '@/global'
 
   const { allUsers, getAllUsers } = loadAllUsers()

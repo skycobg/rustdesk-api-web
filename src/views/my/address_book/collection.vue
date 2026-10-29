@@ -10,7 +10,7 @@
     </el-card>
     <el-card class="list-body" shadow="hover">
       <el-tag type="info" effect="light" style="margin-bottom: 10px">{{ T('MyAddressBookTips') }}</el-tag>
-      <el-table :data="list" v-loading="listRes.loading" border>
+      <el-table :data="list" v-loading="listRes.loading" border highlight-current-row @row-click="row => (clickedBook = row)" style="cursor: pointer">
         <!--        <el-table-column prop="id" label="ID" align="center"/>-->
         <el-table-column prop="name" :label="T('Name')" align="center"/>
         <el-table-column prop="created_at" :label="T('CreatedAt')" align="center"/>
@@ -36,6 +36,7 @@
                      :total="listRes.total">
       </el-pagination>
     </el-card>
+    <BookPeers :collection="clickedBook" :is-my="true"></BookPeers>
     <el-dialog v-model="formVisible" width="800" :title="!formData.id?T('Create') :T('Update') ">
       <el-form class="dialog-form" ref="form" :model="formData" label-width="120px">
         <el-form-item :label="T('Name')" prop="name" required>
@@ -71,6 +72,8 @@
   import { useRepositories } from '@/views/address_book/collection'
   import { onActivated, onMounted, watch } from 'vue'
   import Rule from '@/views/address_book/rule.vue'
+  import BookPeers from '@/views/address_book/components/bookPeers.vue'
+  const clickedBook = ref(null)
   import { ElMessage } from 'element-plus'
   import { setPersonalName } from '@/api/my/address_book_collection'
   import { loadPersonalAbName, personalAbName, personalAbLabel } from '@/utils/personalAb'

@@ -576,5 +576,8 @@
   },
   "WorkTimeTip": {
     "One": "Time from the connection to its close, including the wait for the customer to accept. Only connections that were let in."
+  },
+  "BookPeers": {
+    "One": "Computers in the book"
   }
 }
