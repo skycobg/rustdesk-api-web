@@ -2,7 +2,7 @@
   <el-container class="address-book-con">
     <el-aside width="200px" class="aside">
       <el-select style="width: 100%;" v-model="listQuery.collection_id" filterable>
-        <el-option :value="0" :label="T('MyAddressBook')"></el-option>
+        <el-option :value="0" :label="personalAbLabel()"></el-option>
         <el-option v-for="c in collectionListRes.list" :key="c.id" :label="c.name" :value="c.id"></el-option>
       </el-select>
       <div class="aside-tags">
@@ -24,7 +24,7 @@
         <el-form inline label-width="80px">
 <!--          <el-form-item :label="T('Name')">
             <el-select v-model="listQuery.collection_id" clearable>
-              <el-option :value="0" :label="T('MyAddressBook')"></el-option>
+              <el-option :value="0" :label="personalAbLabel()"></el-option>
               <el-option v-for="c in collectionListRes.list" :key="c.id" :label="c.name" :value="c.id"></el-option>
             </el-select>
           </el-form-item>-->
@@ -53,7 +53,7 @@
           </el-table-column>
           <el-table-column prop="collection_id" :label="T('Name')" align="center" width="150">
             <template #default="{row}">
-              <span v-if="row.collection_id === 0">{{ T('MyAddressBook') }}</span>
+              <span v-if="row.collection_id === 0">{{ personalAbLabel() }}</span>
               <span v-else>{{ collectionListRes.list.find(c => c.id === row.collection_id)?.name }}</span>
             </template>
           </el-table-column>
@@ -172,6 +172,8 @@
   import { useRepositories as useTagRepositories } from '@/views/tag/index'
   import { toWebClientLink } from '@/utils/webclient'
   import { T } from '@/utils/i18n'
+  import { loadPersonalAbName, personalAbLabel } from '@/utils/personalAb'
+  onMounted(loadPersonalAbName)
   import shareByWebClient from '@/views/address_book/components/shareByWebClient.vue'
   import { useAppStore } from '@/store/app'
   import { connectByClient } from '@/utils/peer'

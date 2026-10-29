@@ -4,7 +4,7 @@
       <el-form inline label-width="120px">
         <el-form-item :label="T('AddressBookName')">
           <el-select v-model="listQuery.collection_id" clearable>
-            <el-option :value="0" :label="T('MyAddressBook')"></el-option>
+            <el-option :value="0" :label="personalAbLabel()"></el-option>
             <el-option v-for="c in collectionListRes.list" :key="c.id" :label="c.name" :value="c.id"></el-option>
           </el-select>
         </el-form-item>
@@ -40,7 +40,7 @@
         </el-table-column>
         <el-table-column prop="collection_id" :label="T('AddressBookName')" align="center" width="150">
           <template #default="{row}">
-            <span v-if="row.collection_id === 0">{{ T('MyAddressBook') }}</span>
+            <span v-if="row.collection_id === 0">{{ personalAbLabel() }}</span>
             <span v-else>{{ collectionListRes.list.find(c => c.id === row.collection_id)?.name }}</span>
           </template>
         </el-table-column>
@@ -77,7 +77,7 @@
       <el-form class="dialog-form" ref="form" :model="formData" label-width="120px">
         <el-form-item :label="T('AddressBookName')" required prop="collection_id">
           <el-select v-model="formData.collection_id" clearable @change="changeCollectionForUpdate">
-            <el-option :value="0" :label="T('MyAddressBook')"></el-option>
+            <el-option :value="0" :label="personalAbLabel()"></el-option>
             <el-option v-for="c in collectionListResForUpdate.list" :key="c.id" :label="c.name" :value="c.id"></el-option>
           </el-select>
         </el-form-item>
@@ -178,6 +178,8 @@
   import { useBatchUpdateTagsRepositories, useRepositories } from '@/views/address_book'
   import { toWebClientLink } from '@/utils/webclient'
   import { T } from '@/utils/i18n'
+  import { loadPersonalAbName, personalAbLabel } from '@/utils/personalAb'
+  onMounted(loadPersonalAbName)
   import shareByWebClient from '@/views/address_book/components/shareByWebClient.vue'
   import { useAppStore } from '@/store/app'
   import { connectByClient } from '@/utils/peer'

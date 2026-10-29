@@ -9,7 +9,7 @@
       </el-form>
     </el-card>
     <el-card class="list-body" shadow="hover">
-      <el-tag type="danger" effect="light" style="margin-bottom: 10px">{{ T('MyAddressBookTips') }}</el-tag>
+      <el-tag type="info" effect="light" style="margin-bottom: 10px">{{ T('MyAddressBookTips') }}</el-tag>
       <el-table :data="list" v-loading="listRes.loading" border>
         <!--        <el-table-column prop="id" label="ID" align="center"/>-->
         <el-table-column prop="name" :label="T('Name')" align="center"/>
@@ -22,6 +22,7 @@
               <el-button @click="toEdit(row)">{{ T('Edit') }}</el-button>
               <el-button type="danger" @click="del(row)">{{ T('Delete') }}</el-button>
             </template>
+            <el-button v-else @click="toEditPersonal">{{ T('Edit') }}</el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -46,6 +47,17 @@
         </el-form-item>
       </el-form>
     </el-dialog>
+    <el-dialog v-model="personalVisible" width="800" :title="T('Update')">
+      <el-form class="dialog-form" label-width="120px">
+        <el-form-item :label="T('Name')">
+          <el-input v-model="personalForm" :placeholder="T('MyAddressBook')" maxlength="100"></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-button @click="personalVisible = false">{{ T('Cancel') }}</el-button>
+          <el-button @click="submitPersonal" type="primary">{{ T('Submit') }}</el-button>
+        </el-form-item>
+      </el-form>
+    </el-dialog>
     <el-dialog v-model="rulesVisible" :title="T('ShareRules')" destroy-on-close top="5vh" width="80%">
       <Rule :collection="clickRow" :is_my="1"></Rule>
     </el-dialog>
@@ -59,6 +71,9 @@
   import { useRepositories } from '@/views/address_book/collection'
   import { onActivated, onMounted, watch } from 'vue'
   import Rule from '@/views/address_book/rule.vue'
+  import { ElMessage } from 'element-plus'
+  import { setPersonalName } from '@/api/my/address_book_collection'
+  import { loadPersonalAbName, personalAbName, personalAbLabel } from '@/utils/personalAb'
 
   const {
     listRes,
@@ -74,6 +89,23 @@
   } = useRepositories('my')
 
   onMounted(getList)
+  onMounted(loadPersonalAbName)
+
+  // SKY: "My address book" can be renamed, but not deleted or shared
+  const personalVisible = ref(false)
+  const personalForm = ref('')
+  const toEditPersonal = () => {
+    personalForm.value = personalAbName.value
+    personalVisible.value = true
+  }
+  const submitPersonal = async () => {
+    const res = await setPersonalName({ name: personalForm.value.trim() }).catch(_ => false)
+    if (res) {
+      personalAbName.value = personalForm.value.trim()
+      personalVisible.value = false
+      ElMessage.success(T('OperationSuccess'))
+    }
+  }
 
   watch(() => listQuery.page, getList)
 
@@ -83,7 +115,7 @@
       return listRes.list
     } else {
       return [
-        { id: 0, name: T('MyAddressBook') },
+        { id: 0, name: personalAbLabel() },
         ...listRes.list,
       ]
     }

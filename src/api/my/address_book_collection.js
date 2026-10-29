@@ -31,3 +31,18 @@ export function remove (data) {
   })
 }
 
+
+// SKY: the user's own name for "My address book"
+export function personalName () {
+  return request({
+    url: '/my/address_book_collection/personal',
+  })
+}
+
+export function setPersonalName (data) {
+  return request({
+    url: '/my/address_book_collection/personal',
+    method: 'post',
+    data,
+  })
+}
