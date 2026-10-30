@@ -579,5 +579,8 @@
   },
   "BookPeers": {
     "One": "Computers in the book"
+  },
+  "BookSharesTip": {
+    "One": "Shared address books. New share: Address book names, the Share button of the book."
   }
 }
