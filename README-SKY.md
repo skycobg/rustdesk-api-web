@@ -11,5 +11,9 @@ rustdesk-api v2.7). Our changes live on the `sky` branch:
 - "Time per technician" (`src/views/audit/summary.vue`): sessions and total time in a period.
 - Address book: the note of an entry.
 - Our logo and favicon; the title "SKY Support".
+- Address book names: "My address book" can be renamed (Edit; no delete or share); a click on a book shows
+  its computers below, read only (`views/address_book/components/bookPeers.vue`).
+- "Shares" lists the shared address books (book, to whom, rights, delete; `bookShares.vue`) instead of the
+  web client links, which we do not use. "Nickname" is "Име и фамилия".
 
 Build: `npm ci && npm run build`; `dist/` goes to `resources/admin/` of rustdesk-api.
